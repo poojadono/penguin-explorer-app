@@ -12,7 +12,7 @@ from PIL import Image
 st.set_page_config(page_title="Penguin Explorer", page_icon=":penguin:", layout="wide")
 
 # Display the app logo and title
-logo = Image.open('/home/pooja/audio-video/2.7/penguin-logo.png')
+logo = Image.open('penguin-logo.png')
 st.image(logo, width=800)
 st.title("Penguin Explorer")
 st.write("""
@@ -21,7 +21,7 @@ Explore the Palmer Archipelago Penguin dataset interactively. Use the sidebar wi
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv('/home/pooja/audio-video/2.7/penguins_size.csv')
+    data = pd.read_csv('penguins_size.csv')
     # Assuming 'body_mass_g' might have NaN, fill NaN with the median or drop NaN values
     data['body_mass_g'] = data['body_mass_g'].fillna(data['body_mass_g'].median())
     return data
